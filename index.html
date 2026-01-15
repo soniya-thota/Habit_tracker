@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Habit Tracker</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="card">
+    <header class="header">
+      <h1>Habit Tracker</h1>
+      <p>Track daily/weekly habits, keep streaks, and view a 7-day history.</p>
+    </header>
+
+    <section class="add">
+      <input id="habitName" placeholder="Add a habit (e.g., Study 30 min)" />
+      <select id="freq">
+        <option value="daily">Daily</option>
+        <option value="weekly">Weekly</option>
+      </select>
+      <button id="addBtn">Add</button>
+    </section>
+
+    <section class="stats">
+      <div><b>Today:</b> <span id="today"></span></div>
+      <div><b>Streak:</b> <span id="streak">0</span> 🔥</div>
+    </section>
+
+    <section>
+      <h2>Your habits</h2>
+      <div id="list"></div>
+    </section>
+
+    <section>
+      <h2>Last 7 days</h2>
+      <div id="history" class="history"></div>
+    </section>
+     
+    <section>
+      <h2>Calendar heatmap (last 120 days)</h2>
+      <div id="heatmap" class="heatmap"></div>
+      <div class="legend">
+      <span>Less</span>
+      <span class="box lv0"></span>
+      <span class="box lv1"></span>
+      <span class="box lv2"></span>
+      <span class="box lv3"></span>
+      <span class="box lv4"></span>
+      <span>More</span>
+      </div>
+    </section>
+
+
+    <section class="tools">
+      <button id="exportBtn">Export</button>
+      <label class="importLabel">
+        Import
+        <input id="importFile" type="file" accept="application/json" hidden />
+      </label>
+      <button id="resetBtn" class="danger">Reset</button>
+    </section>
+
+    <footer class="footer">
+      <small>Data is saved in your browser (LocalStorage). No account needed.</small>
+    </footer>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
